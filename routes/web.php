@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('stores', 'StoreController', ['only' => ['index', 'show', 'create', 'edit', 'store', 'update', 'destroy']]);
