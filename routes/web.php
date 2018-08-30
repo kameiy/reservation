@@ -20,3 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('stores', 'StoreController', ['only' => ['index', 'show', 'create', 'edit', 'store', 'update', 'destroy']]);
+
+Route::get('stores/{store_id}/seats/create', 'SeatController@create');
+Route::post('stores/{store_id}/seats', 'SeatController@store');
+Route::delete('stores/{store_id}/seats/{seat}', 'SeatController@destroy');
