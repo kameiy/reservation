@@ -24,3 +24,9 @@ Route::resource('stores', 'StoreController', ['only' => ['index', 'show', 'creat
 Route::get('stores/{store_id}/seats/create', 'SeatController@create');
 Route::post('stores/{store_id}/seats', 'SeatController@store');
 Route::delete('stores/{store_id}/seats/{seat}', 'SeatController@destroy');
+
+Route::resource('reservations', 'ReservationController', ['only' => ['index', 'create', 'store', 'destroy']]);
+// Route::get('reservations', 'ReservationController@index');
+// Route::get('reservations/create', 'ReservationController@create');
+// Route::post('reservations', 'ReservationController@store');
+// Route::delete('reservations', 'ReservationController@destory');
